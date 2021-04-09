@@ -5,13 +5,16 @@
 - [description](#description)
 - [Problem](#problem)
 - [Solution](#solution)
+  - [Sketches](#sketches)
 - [Future](#future)
 - [Technicalities](#technicalities)
-- [dependencies](#future)
-- [Future](#future)
-  - [Coding conventions](#coding-convention)
+  - [Dataflow](#dataflow)
+  - [Dependencies](#dependencies)
+  - [Coding conventions](#coding-conventions)
+  - [Git conventions](#git-conventions)
   - [Build Scripts](#build-scripts)
-  - [Frameworks && Libraries](#frameworks-&&-libraries)
+  - [Frameworks && Libraries](#frameworks--libaries)
+  - [API](#api)
 
 ## Description
 
@@ -103,7 +106,7 @@ Lately I have been following the gitmoji strategy. This means that every commit 
 
 For branching I am following the slash strategy. This is a convention based on agilty and hierachy. The branch shouldn't exist for long... But later I've read that it can cause some problems. <br> <sub>this has to be researched further before making a concrete decision.</sub>
 
-#### Linting
+### Linting
 
 This application will be using [ESLint](https://www.npmjs.com/package/eslint) with the extension [Google-Style-Guide ESlint](https://github.com/google/eslint-config-google).
 
