@@ -8,7 +8,10 @@
 - [Future](#future)
 - [Technicalities](#technicalities)
 - [dependencies](#future)
-- [Future](#future) -[Coding conventions](#coding-convention) -[Build Scripts](#build-scripts) -[Frameworks && Libraries](#frameworks-&&-libraries)
+- [Future](#future)
+  - [Coding conventions](#coding-convention)
+  - [Build Scripts](#build-scripts)
+  - [Frameworks && Libraries](#frameworks-&&-libraries)
 
 ## Description
 
