@@ -183,8 +183,6 @@ Firebase || Supabase, a real-time database, one is based on collections (noSql) 
 
 ### API
 
-### `API`
-
 The first API I was thinking of is the [Giphy API](https://developers.giphy.com/docs/sdk#design-guidelines).
 
 # License
