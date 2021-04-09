@@ -87,6 +87,10 @@ As mentioned, I will simplify this idea but ideally I would have the following f
 
 ## Technicalities
 
+For this project to be able to developed on your machine there are some requirements:
+
+- [Have node installed.](https://nodejs.org/en/)
+
 ### Installation
 
 For development run the following commands:
@@ -133,7 +137,17 @@ The data flows bi-directional.
 
 ### Dependencies
 
-devDependencies || dependencies
+**Dependencies**
+|Name|Functionality|
+|:--|--|
+|[Express](https://www.npmjs.com/package/express)|Minimalistic unopinionated web framework.|
+|[Socket.io](https://www.npmjs.com/package/socket.io)|Node Package that uses WebSockets API and extends upon it.<br> Allows for real-time Bi-directional communication.|
+
+**Dev Dependencies**
+|Name|Functionality|
+|:--|--|
+|[eslint](https://www.npmjs.com/package/eslint)|Linter that find and fixes problems in JavaScript.|
+|[eslint-config-google](https://www.npmjs.com/package/eslint-config-google)|ESLint configuration for ESLint. enforces rules from [Google Styleguide](https://google.github.io/styleguide/jsguide.html).|
 
 ### Coding conventions
 
