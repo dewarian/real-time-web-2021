@@ -20,6 +20,17 @@ Data will be stored within a database like Google's [Firebase](firebase.com) or 
 - [ ] Custom actions
   - Imagine WhatsApp business or `/` functionality.
 
+<!--
+real-time data manipuleren op de server.
+lijst data kunnen aanpassen veranderen.
+chat history niet genoeg, data management beheren.
+even kijken naar deze rubric.
+data bijhouden, generen, aanpassen
+concept omgooien, van de chat af te gaan.
+
+eventueel google docs
+ -->
+
 # External Data
 
 The first API I was thinking of is the [Giphy API](https://developers.giphy.com/docs/sdk#design-guidelines).
