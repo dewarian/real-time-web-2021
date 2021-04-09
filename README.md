@@ -1,5 +1,15 @@
 # Basic Chat app
 
+**TL;DR**
+Chat app built with Express, to develop with this project:
+
+```BASH
+# Navigate to your projects folder
+git clone https://github.com/dewarian/real-time-web-2021.git
+```
+
+Or view the code with [Github1s](https://github1s.com/dewarian/real-time-web-2021/tree/asgmt/).
+
 ## Table of Content
 
 - [description](#description)
@@ -30,7 +40,7 @@
 > - lijst van fav gebruikers = data management?
 >   in a game: all time best player; top list that is being constantly updated
 
-> **Disclaimer:** If you want to read the course documentation, the [branch `docs`](https://github.com/dewarian/real-time-web-2021/tree/docs) contain the latest information of this course.
+> **Disclaimer:** If you want to read the course documentation, the [branch`docs`](https://github.com/dewarian/real-time-web-2021/tree/docs) contain the latest information of this course.
 
 A chat app called **Basic Chat** build in web technologies to expand the knowledge about webSockets via [socket.io](https://www.socket.io).
 
