@@ -1,10 +1,12 @@
 # Basic Chat app
 
-For school documentation please navigate to the [docs branch](https://github.com/dewarian/real-time-web-2021/tree/docs)
+For school documentation please navigate to the [docs branch](https://github.com/dewarian/real-time-web-2021/tree/docs).
 
 This project is intended to be a better version of WhatsApp. The reason for this is because the web app and the desktop client are incredibly annoying to use.
 
 Thus I would like to add Telegram functionalities and more.
+
+Data will be stored within a database like Google's [Firebase](firebase.com) or the Opensource variant Supabase.
 
 ## Future functionalities
 
@@ -30,14 +32,22 @@ The first API I was thinking of is the [Giphy API](https://developers.giphy.com/
 
 ## Sketch UI
 
+The UI that I am visualising for this WhatsApp clone is a mixture between Dribbble, Telegram and WhatsApp.
+
+The interface isn't fixed yet as I am dabbling between a minimal variant or a bubbly variant.
+<sub>Potentionally using this as an option in settings.</sub>
+
 ![IMAGE 2021-04-09 16:00:26](https://user-images.githubusercontent.com/13199349/114191437-b3521f80-994c-11eb-89f1-aae1bb58a7f4.jpg)
 
 # Installation
 
-```BASH
+For development run the following commands:
+
+```ZSH
 npm install
+npm start
 # or
-yarn install
+yarn run
 ```
 
 # Conventions
