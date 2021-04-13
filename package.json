@@ -1,0 +1,33 @@
+{
+  "name": "markeer",
+  "version": "1.0.0",
+  "description": "markdown collaborative web editor",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dewarian/real-time-web-2021.git"
+  },
+  "author": "Nathan Bommezijn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dewarian/real-time-web-2021/issues"
+  },
+  "homepage": "https://github.com/dewarian/real-time-web-2021#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.7"
+  }
+}
