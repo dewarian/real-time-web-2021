@@ -11,7 +11,9 @@ APP.set('view engine', 'ejs');
 APP.set('views', 'views');
 
 APP.get('/', ( request, result ) => {
-  result.send(`I am MARKEER!`);
+  result.render('index', {
+    title: 'hello',
+  });
 });
 
 APP.listen(PORT, () => {
