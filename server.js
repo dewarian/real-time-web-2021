@@ -12,7 +12,7 @@ APP.set('views', 'views');
 
 APP.get('/', ( request, result ) => {
   result.render('index', {
-    title: 'hello',
+    title: 'Markeer',
   });
 });
 
