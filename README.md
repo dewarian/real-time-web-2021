@@ -1,8 +1,8 @@
-# Real time something
+# Real time Markdown Editor
 
 
 **TL;DR**
-`{{concept}}` built with Express, to develop with this project:
+**Markeer**, a collaborative markdown web-editor built with Express (potentionally react), to develop this project further:
 
 ```BASH
 # Navigate to your projects folder
@@ -44,27 +44,29 @@ For school documentation please navigate to the [docs branch](https://github.com
 
 
 What is the idea about?
-<!-- A chat app called **Basic Chat** build in web technologies to expand the knowledge about webSockets via [socket.io](https://www.socket.io).
 
-The application is a simplified version of a chatting platform like WhatsApp or Telegram. Simplified in the way of there isn't a special user verification system where the system recognizes the different users or prevent spamming the creation of users. -->
+The idea came from writing documentation for the [readme.md](./readme.md). There are many text editors in which you can collaborate but there haven't been many for markdown specifically. The one that came the closest is [Typora](https://typora.io/) and [Notion (export function)](https://www.notion.so/Export-a-page-as-Markdown-69b6031dd9454022abed8e23a86b0e1e).
+
+The base functionality of **Markeer** is to write markdown with multiple users while seeing a live variant of it. The collaborative functionality will be created with [socket.io](https://www.socket.io).
+
 
 ## Problem
 
 What is the problem?
-<!-- The current problem is that I have zero experience with [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), This is problematic as I would need to create something that enables real-time, bidirectional and event-based communication, e.g. a chat service. -->
+The current problem is that I have zero experience with [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), this is problematic and thus want to create something with sockets. After some contemplating I decided to create a text editor, specifically an editor to write markdown.
+
 
 ## Solution
 What is the solution?
-<!-- The best solution would be a full blown WhatsApp killer with features that I like form other platforms such as Telegram. But considering the complexity of this idea I have to break it open and keep it to the core. _A simple chatting application_. -->
+The solution would be a markdown editor created in NodeJS and some client-side. The best solution would be a Google Docs killer <sub><sup>or competitor however you want to see it</sup></sub>.
+
+It will be done from a Read Me Driven Development manner where the readme is constantly updated to reflect the state of the application.
 
 ### Sketches
+The interface I am imagining for this markdown editor is to focus on the functionality first. The most important activity would be able to write markdown and see what the user have written. Ideal case is to interpret the markdown and transforming it into the rendered variant without a separate window.
 
 <kdb>
   <img src="https://user-images.githubusercontent.com/13199349/114408302-923a3a80-9ba9-11eb-9ce2-ec3bbd39f1bc.png" >
-</kdb>
-
-<kdb>
-  <img src="https://user-images.githubusercontent.com/13199349/114408317-95352b00-9ba9-11eb-92f0-a128fd66f8d2.png">
 </kdb>
 
 <!-- The UI that I am visualising for this WhatsApp clone is a mixture between Dribbble, Telegram and WhatsApp.
@@ -72,12 +74,35 @@ What is the solution?
 The interface isn't fixed yet as I am dabbling between a minimal variant or a bubbly variant.
 <sub>Potentionally using this as an option in settings.</sub> -->
 
-<kbd>
-  <img src="https://user-images.githubusercontent.com/13199349/114191437-b3521f80-994c-11eb-89f1-aae1bb58a7f4.jpg" alt="UI concept of chatapp">
-</kbd>
-
 ## Future
 What will the concept do. Or what will it do in the future?
+
+As mentioned earlier the ideal state of this application is to have a complete markdown editor where you can create multiple files, save those files, or even export those to use it in your next project.
+
+Another cool idea would integration with Github, where you can add the markdown to a wiki or readme without having to manually paste the markdown.
+
+**functionalities**
+Actions that should be possible in a markdown editor, ordered in a manner according to the MoSCoW method. The following rows in the tables are activities that an user should be able to complete or enhance it's experience.
+
+| |Must|Should|Could|Would|
+|:-------------------|:-:|:-:|:-:|:-:|
+|Write Markdown      | :white_check_mark:  |   |   |   |
+|Multi User support  | :white_check_mark:  |   |   |   |
+|Export Markdown     |   |   | :white_check_mark:  |   |
+|Github Intergration |   |   |   | :white_check_mark:  |
+|Storage for markdown| :white_check_mark:  |   |   |   |
+|Shortcuts           |   |   |   | :white_check_mark:  |
+|Prefix auto-complete|   |   |   | :white_check_mark:  |
+|`//To Be continued` |   |   |   |   |
+
+**Style decisions**
+Style decisions are decisions that are made for the user interface of the application, UI experiences that will be added as the project is being developed.
+| |Must|Should|Could|Would|
+|:-------------------|:-:|:-:|:-:|:-:|
+|Syntax Highlighting |   |   |  :white_check_mark: |   |
+|Dark Mode           |   | :white_check_mark:  |   |   |
+|`//To Be continued` |   |   |   |   |
+
 <!-- 
 As mentioned, I will simplify this idea but ideally I would have the following features implemented:
 
@@ -107,6 +132,7 @@ For development run the following commands:
 npm install
 npm start
 # or
+yarn
 yarn run
 ```
 
@@ -143,7 +169,7 @@ The data flows bi-directional.
 └────────────┘   Bi-dir
 ```
 
-<sub>In courtesy of [asciiflow](https://asciiflow.com/)</sub>
+<sub>In courtesy of [asciiflow](https://asciiflow.com/).</sub>
 
 ### Dependencies
 
