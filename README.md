@@ -1,6 +1,5 @@
 # Real time Markdown Editor
 
-
 **TL;DR**
 **Markeer**, a collaborative markdown web-editor built with Express (potentionally react), to develop this project further:
 
@@ -12,6 +11,7 @@ git clone https://github.com/dewarian/real-time-web-2021.git
 Or view the code with [Github1s](https://github1s.com/dewarian/real-time-web-2021/tree/asgmt/).
 
 For school documentation please navigate to the [docs branch](https://github.com/dewarian/real-time-web-2021/tree/docs)
+
 ## Table of Content
 
 - [description](#description)
@@ -30,39 +30,23 @@ For school documentation please navigate to the [docs branch](https://github.com
 
 ## Description
 
-> Feedback 9/4/21:
->
-> - real-time data manipuleren op de server.
->   - lijst data kunnen aanpassen veranderen.
-> - chat history niet genoeg, data management beheren.
->   - even kijken naar deze rubric.
->   - data bijhouden, generen, aanpassen
-> - concept omgooien, van de chat af te gaan.
->   - eventueel google docs?
-> - lijst van fav gebruikers = data management?
->   in a game: all time best player; top list that is being constantly updated
-
-
-What is the idea about?
-
 The idea came from writing documentation for the [readme.md](./readme.md). There are many text editors in which you can collaborate but there haven't been many for markdown specifically. The one that came the closest is [Typora](https://typora.io/) and [Notion (export function)](https://www.notion.so/Export-a-page-as-Markdown-69b6031dd9454022abed8e23a86b0e1e).
 
 The base functionality of **Markeer** is to write markdown with multiple users while seeing a live variant of it. The collaborative functionality will be created with [socket.io](https://www.socket.io).
-
 
 ## Problem
 
 What is the problem?
 The current problem is that I have zero experience with [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), this is problematic and thus want to create something with sockets. After some contemplating I decided to create a text editor, specifically an editor to write markdown.
 
-
 ## Solution
-What is the solution?
+
 The solution would be a markdown editor created in NodeJS and some client-side. The best solution would be a Google Docs killer <sub><sup>or competitor however you want to see it</sup></sub>.
 
 It will be done from a Read Me Driven Development manner where the readme is constantly updated to reflect the state of the application.
 
 ### Sketches
+
 The interface I am imagining for this markdown editor is to focus on the functionality first. The most important activity would be able to write markdown and see what the user have written. Ideal case is to interpret the markdown and transforming it into the rendered variant without a separate window.
 
 <kdb>
@@ -75,7 +59,6 @@ The interface isn't fixed yet as I am dabbling between a minimal variant or a bu
 <sub>Potentionally using this as an option in settings.</sub> -->
 
 ## Future
-What will the concept do. Or what will it do in the future?
 
 As mentioned earlier the ideal state of this application is to have a complete markdown editor where you can create multiple files, save those files, or even export those to use it in your next project.
 
@@ -84,26 +67,26 @@ Another cool idea would integration with Github, where you can add the markdown 
 **functionalities**
 Actions that should be possible in a markdown editor, ordered in a manner according to the MoSCoW method. The following rows in the tables are activities that an user should be able to complete or enhance it's experience.
 
-| |Must|Should|Could|Would|
-|:-------------------|:-:|:-:|:-:|:-:|
-|Write Markdown      | :white_check_mark:  |   |   |   |
-|Multi User support  | :white_check_mark:  |   |   |   |
-|Export Markdown     |   |   | :white_check_mark:  |   |
-|Github Intergration |   |   |   | :white_check_mark:  |
-|Storage for markdown| :white_check_mark:  |   |   |   |
-|Shortcuts           |   |   |   | :white_check_mark:  |
-|Prefix auto-complete|   |   |   | :white_check_mark:  |
-|`//To Be continued` |   |   |   |   |
+|                      |        Must        | Should |       Could        |       Would        |
+| :------------------- | :----------------: | :----: | :----------------: | :----------------: |
+| Write Markdown       | :white_check_mark: |        |                    |                    |
+| Multi User support   | :white_check_mark: |        |                    |                    |
+| Export Markdown      |                    |        | :white_check_mark: |                    |
+| Github Intergration  |                    |        |                    | :white_check_mark: |
+| Storage for markdown | :white_check_mark: |        |                    |                    |
+| Shortcuts            |                    |        |                    | :white_check_mark: |
+| Prefix auto-complete |                    |        |                    | :white_check_mark: |
+| `//To Be continued`  |                    |        |                    |                    |
 
 **Style decisions**
 Style decisions are decisions that are made for the user interface of the application, UI experiences that will be added as the project is being developed.
 | |Must|Should|Could|Would|
 |:-------------------|:-:|:-:|:-:|:-:|
-|Syntax Highlighting |   |   |  :white_check_mark: |   |
-|Dark Mode           |   | :white_check_mark:  |   |   |
-|`//To Be continued` |   |   |   |   |
+|Syntax Highlighting | | | :white_check_mark: | |
+|Dark Mode | | :white_check_mark: | | |
+|`//To Be continued` | | | | |
 
-<!-- 
+<!--
 As mentioned, I will simplify this idea but ideally I would have the following features implemented:
 
 - **Giphy / Tenor GIF support**
@@ -197,7 +180,6 @@ For branching I am following the slash strategy. This is a convention based on a
 
 ### Linting
 
-
 This application will be using [ESLint](https://www.npmjs.com/package/eslint) with the extension [Google-Style-Guide ESlint](https://github.com/google/eslint-config-google).
 
 To know what other settings I enabled in ESLint, check the [configuration file](./eslintrc.json).
@@ -222,6 +204,21 @@ Firebase || Supabase, a real-time database, one is based on collections (noSql) 
 ### API
 
 The first API I was thinking of is the [Giphy API](https://developers.giphy.com/docs/sdk#design-guidelines).
+
+# Feedback
+
+<details>
+<summary>9/4/21</summary>
+<li>real-time data manipuleren op de server.</li>
+<li>lijst data kunnen aanpassen veranderen.</li>
+<li>chat history niet genoeg, data management beheren.</li>
+<li>even kijken naar deze rubric.</li>
+<li>data bijhouden, generen, aanpassen.</li>
+<li>concept omgooien, van de chat af te gaan./li>
+<li>eventueel google docs?</li>
+<li>lijst van fav gebruikers = data management?</li>
+<li>lijst van fav gebruikers = data management?</li>
+</details>
 
 # License
 
