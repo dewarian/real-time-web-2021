@@ -197,7 +197,11 @@ For branching I am following the slash strategy. This is a convention based on a
 
 ### Linting
 
+
 This application will be using [ESLint](https://www.npmjs.com/package/eslint) with the extension [Google-Style-Guide ESlint](https://github.com/google/eslint-config-google).
+
+To know what other settings I enabled in ESLint, check the [configuration file](./eslintrc.json).
+**Most notable: For Windows VS Code users, change the linebreak style from `CRLF` to `LF`**
 
 ### Build scripts
 
