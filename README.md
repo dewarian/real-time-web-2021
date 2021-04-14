@@ -49,9 +49,13 @@ It will be done from a Read Me Driven Development manner where the readme is con
 
 The interface I am imagining for this markdown editor is to focus on the functionality first. The most important activity would be able to write markdown and see what the user have written. Ideal case is to interpret the markdown and transforming it into the rendered variant without a separate window.
 
-<kdb>
-  <img src="https://user-images.githubusercontent.com/13199349/114408302-923a3a80-9ba9-11eb-9ce2-ec3bbd39f1bc.png" >
-</kdb>
+<kbd>
+  <img src="https://user-images.githubusercontent.com/13199349/114627540-b3884d00-9cb5-11eb-9ab0-219f0a7c315e.png" alt="Concept drawing, Markeer's flow is drawn and actions are written down">
+</kbd>
+
+<kbd>
+  <img src="https://user-images.githubusercontent.com/13199349/114408302-923a3a80-9ba9-11eb-9ce2-ec3bbd39f1bc.png" alt="two concepts for real time application, a google docs clone and a stocks dashboard to share portfolio's">
+</kbd>
 
 <!-- The UI that I am visualising for this WhatsApp clone is a mixture between Dribbble, Telegram and WhatsApp.
 
