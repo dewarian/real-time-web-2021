@@ -1,41 +1,21 @@
-import express from 'express';
-import compression from 'compression';
-import dotenv from 'dotenv';
-import {fileURLToPath} from 'url';
-import firebase from '@firebase/app';
-import '@firebase/firestore';
-import {createServer} from 'http';
-import {Server} from 'socket.io';
+const express = require('express');
+const APP = express();
+const compression = require('compression');
+const dotenv = require('dotenv');
+const firebase = require('firebase');
+require('firebase/firestore');
+const httpServer = require('http').createServer(APP);
+const io = require('socket.io')(httpServer);
 
 dotenv.config();
-const APP = express();
 const PORT = process.env.PORT || 8080;
-const __dirname = fileURLToPath(import.meta.url);
 
 
-const httpServer = createServer(APP);
-const io = new Server(httpServer);
-
-io.on('connection', (socket) => {
-  io.emit('connected');
-});
-
-
-const firebaseConfig = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCEKT,
-};
-
-firebase.default.initializeApp(firebaseConfig);
-const db = firebase.default.firestore();
-
+// Basic Express setup
 APP.use(compression({level: 6}));
 APP.use(express.static(__dirname + '/public'));
 APP.set('view engine', 'ejs');
 APP.set('views', 'views');
-
 
 APP.get('/', ( request, result ) => {
   insertUserDb('nathan', 'bommezijn', 1997);
@@ -43,6 +23,36 @@ APP.get('/', ( request, result ) => {
     title: 'Markeer',
   });
 });
+
+httpServer.listen(PORT, () => {
+  console.log(`Listening to port http://localhost:${PORT}`);
+});
+
+
+// Socket IO connections
+io.on('connection', (socket) => {
+  console.log('connected');
+  socket.on('message', (event) => {
+    console.log(event);
+    socket.broadcast.event('message', event);
+  });
+});
+
+io.on('disconnect', (event) => {
+  console.log('user disconnected');
+});
+
+
+// Firebase initialisations
+const firebaseConfig = {
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCEKT,
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 /**
  * @description Add user to firestore
@@ -63,7 +73,3 @@ function insertUserDb(first, last, born) {
       console.error(`Error adding documents: ${error}`);
     });
 }
-
-httpServer.listen(PORT, () => {
-  console.log(`Listening to port http://localhost:${PORT}`);
-});
