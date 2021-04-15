@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+:root {
+  --ff: 'Open Sans', Helvetica, Tahoma, sans-serif;
+  --acc-100: #ffcc00;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.6;
+  font-family: var(--ff);
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#editor {
+  resize: none;
+  width: 90vw;
+  height: 80vh;
+  font-size: 1.2rem;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px hsla(0, 0%, 65%, 0.5);
+
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+#editor:focus-within {
+  border: none;
+  outline: none;
+}
+
+#editor::selection, #editor::-moz-selection, #editor::-webkit-selection {
+  background: var(--acc-100);
+}

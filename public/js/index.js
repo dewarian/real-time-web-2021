@@ -1,5 +1,5 @@
 console.log('hello index');
-const socket = io('http://localhost:8080');
+const socket = io();
 
 document.getElementById('editor').addEventListener('keyup', (event) => {
   const editor = document.getElementById('editor');
