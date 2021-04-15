@@ -18,7 +18,7 @@ APP.set('view engine', 'ejs');
 APP.set('views', 'views');
 
 APP.get('/', ( request, result ) => {
-  insertUserDb('nathan', 'bommezijn', 1997);
+  // insertUserDb('nathan', 'bommezijn', 1997);
   result.render('index', {
     title: 'Markeer',
   });
