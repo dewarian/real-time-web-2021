@@ -4,11 +4,22 @@ import dotenv from 'dotenv';
 import {fileURLToPath} from 'url';
 import firebase from '@firebase/app';
 import '@firebase/firestore';
+import {createServer} from 'http';
+import {Server} from 'socket.io';
 
 dotenv.config();
 const APP = express();
 const PORT = process.env.PORT || 8080;
 const __dirname = fileURLToPath(import.meta.url);
+
+
+const httpServer = createServer(APP);
+const io = new Server(httpServer);
+
+io.on('connection', (socket) => {
+  io.emit('connected');
+});
+
 
 const firebaseConfig = {
   apiKey: process.env.APIKEY,
@@ -19,12 +30,12 @@ const firebaseConfig = {
 
 firebase.default.initializeApp(firebaseConfig);
 const db = firebase.default.firestore();
-// const db = firebase.firestore();
 
 APP.use(compression({level: 6}));
 APP.use(express.static(__dirname + '/public'));
 APP.set('view engine', 'ejs');
 APP.set('views', 'views');
+
 
 APP.get('/', ( request, result ) => {
   insertUserDb('nathan', 'bommezijn', 1997);
@@ -53,6 +64,6 @@ function insertUserDb(first, last, born) {
     });
 }
 
-APP.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(`Listening to port http://localhost:${PORT}`);
 });
