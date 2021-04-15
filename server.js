@@ -33,8 +33,8 @@ httpServer.listen(PORT, () => {
 io.on('connection', (socket) => {
   console.log('connected');
   socket.on('message', (event) => {
-    console.log(event);
-    socket.broadcast.event('message', event);
+    // console.log(event);
+    socket.broadcast.emit('message', event);
   });
 });
 
