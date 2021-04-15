@@ -8,11 +8,14 @@
   <title><%= title %></title>
 </head>
 <body>
+  <nav>
+    <p><%= title%></p>
+    <button class="inv-btn">Test</button>
+  </nav>
   <header>
-    <h1><%= title %></h1>
-    <p>Coming soon to your browser.</p>
   </header>
   <main>
+    <p>Coming soon to your browser.</p>
     <textarea name="" id="editor" wrap="hard" cols="100" rows="20" autofocus></textarea>
   </main>
   <script src="/socket.io/socket.io.js"></script>
