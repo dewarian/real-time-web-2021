@@ -158,6 +158,44 @@ The data flows bi-directional.
 
 <sub>In courtesy of [asciiflow](https://asciiflow.com/).</sub>
 
+### Data Model
+
+The data model is structured like a real-time database as I am using firestore to keep track of what is happening within a markdown document.
+
+Firestore is built in collections that can have documents but could be diverged deeper with subcollections. To store multiple documents with each their own content I would have to use subcollections as a list of documents that contain information about the document.
+
+
+```asciiDoc
+┌───────────────────┐          ┌─────────────────────────┐
+│  Collections      │          │  Documents (subcol)     │
+├───────────────────┤          ├─────────────────────────┤
+│                   │          │                         │
+│  ID: varchar(20)  │1   TO   N│  Timestamp: datetime    │
+│                   ├──────────┤  Editors  : arr         │
+│                   │          │  Name     : string      │
+│                   │          │                         │
+└───────────────────┘          └────────────┬────────────┘
+                                            │1
+                                            │
+                                            │TO
+                                            │
+                                            │N
+                               ┌────────────┴────────────┐
+                               │  Document               │
+                               ├─────────────────────────┤
+                               │                         │
+                               │  Name        : string   │
+                               │  Last_Editor : string   │
+                               │  Last_Edit   : datetime │
+                               │  Edited_Block: map      │
+                               └─────────────────────────┘
+```
+
+### Data cycle
+
+![Datacycle](https://user-images.githubusercontent.com/13199349/114987987-1a645c80-9e96-11eb-9ffd-e3a7dc51ef7d.png)
+
+
 ### Dependencies
 
 **Dependencies**
@@ -223,6 +261,12 @@ The first API I was thinking of is the [Giphy API](https://developers.giphy.com/
 <li>lijst van fav gebruikers = data management?</li>
 <li>lijst van fav gebruikers = data management?</li>
 </details>
+
+# Bibliography
+
+- [Firestore Datamodel](https://firebase.google.com/docs/firestore/data-model)
+- [Firestore datatypes](https://firebase.google.com/docs/firestore/manage-data/data-types)
+- [Expressing cardinality in ascii](https://dba.stackexchange.com/questions/230840/most-common-way-to-express-cardinality-in-ascii)
 
 # License
 
