@@ -10,6 +10,8 @@
   },
   "rules": {
     "no-tabs": "error",
-    "indent": ["error", 2]
-  }
+    "indent": ["error", 2],
+    "space-before-function-paren": ["error", "always"]
+  },
+  "ignorePatterns": ["**/node_modules", "**/package.json"]
 }
