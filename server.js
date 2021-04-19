@@ -42,7 +42,7 @@ const User = require('./models/userModel');
 const test = new User('nadine', 'meijers', 1996);
 
 APP.get('/', (request, result) => {
-  insertUserDb({first: 'test', last: 'test', born: 1999});
+  insertUserDb(test);
   result.render('index', {
     title: 'Markeer',
   });
@@ -75,6 +75,24 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+/**
+ * @description Add user to firestore
+ * @param {*} first firstname
+ * @param {*} last lastname
+ * @param {*} born YearOfBirth
+ */
+function insertUserDb (data) {
+  db.collection('users')
+    .withConverter(userConverter)
+    .add(data)
+    .then((docRef) => {
+      console.log(`Doc written with ID: ${docRef.id}`);
+    })
+    .catch((error) => {
+      console.error(`Error adding documents: ${error}`);
+    });
+}
+
 const userConverter = {
   toFirestore: function (user) {
     return {
@@ -88,21 +106,3 @@ const userConverter = {
     return new User(data.first, data.last, data.born);
   },
 };
-
-/**
- * @description Add user to firestore
- * @param {*} first firstname
- * @param {*} last lastname
- * @param {*} born YearOfBirth
- */
-function insertUserDb (first, last, born) {
-  db.collection('users')
-    .withConverter(userConverter)
-    .add({first, last, born})
-    .then((docRef) => {
-      console.log(`Doc written with ID: ${docRef.id}`);
-    })
-    .catch((error) => {
-      console.error(`Error adding documents: ${error}`);
-    });
-}
