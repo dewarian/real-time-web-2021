@@ -6,6 +6,8 @@
 ```BASH
 # Navigate to your projects folder
 git clone https://github.com/dewarian/real-time-web-2021.git
+npm i
+npm run dev
 ```
 
 Or view the code with [Github1s](https://github1s.com/dewarian/real-time-web-2021/tree/asgmt/).
@@ -20,6 +22,7 @@ For school documentation please navigate to the [docs branch](https://github.com
   - [Sketches](#sketches)
 - [Future](#future)
 - [Technicalities](#technicalities)
+  - [Installation](#installation)
   - [Dataflow](#dataflow)
   - [Dependencies](#dependencies)
   - [Coding conventions](#coding-conventions)
@@ -115,12 +118,15 @@ For this project to be able to developed on your machine there are some requirem
 
 For development run the following commands:
 
-```ZSH
+```BASH
+git clone https://github.com/dewarian/real-time-web-2021.git
 npm install
-npm start
+npm run dev #or npm start
 # or
 yarn
-yarn run
+yarn run dev #or yarn run start
+
+Navigate to [localhost:8080](localhost:8080)
 ```
 
 ### Dataflow
