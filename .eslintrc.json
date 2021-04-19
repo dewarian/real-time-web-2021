@@ -9,9 +9,9 @@
     "sourceType": "module"
   },
   "rules": {
+    "space-before-function-paren": ["error", "always"],
     "no-tabs": "error",
-    "indent": ["error", 2],
-    "space-before-function-paren": ["error", "always"]
+    "indent": ["error", 2]
   },
   "ignorePatterns": ["**/node_modules", "**/package.json"]
 }
