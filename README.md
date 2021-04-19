@@ -30,6 +30,7 @@ For school documentation please navigate to the [docs branch](https://github.com
   - [Build Scripts](#build-scripts)
   - [Frameworks && Libraries](#frameworks--libaries)
   - [API](#api)
+- [Honourable Mentions](#honourable-mentions)
 
 ## Description
 
@@ -273,6 +274,9 @@ The first API I was thinking of is the [Giphy API](https://developers.giphy.com/
 - [Firestore Datamodel](https://firebase.google.com/docs/firestore/data-model)
 - [Firestore datatypes](https://firebase.google.com/docs/firestore/manage-data/data-types)
 - [Expressing cardinality in ascii](https://dba.stackexchange.com/questions/230840/most-common-way-to-express-cardinality-in-ascii)
+
+# Honourable Mentions
+I would like to thank [Shabier](www.github.com/sjagoori) for helping me out with implementing socket.io, recommending [markdown-it](https://github.com/markdown-it/markdown-it) and local database wizardry. <sub>He a true wizard</sub>
 
 # License
 
