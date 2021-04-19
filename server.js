@@ -69,7 +69,7 @@ const firebaseConfig = {
   apiKey: process.env.APIKEY,
   authDomain: process.env.AUTHDOMAIN,
   projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCEKT,
+  storageBucket: process.env.STORAGEBUCKET,
 };
 
 firebase.initializeApp(firebaseConfig);
