@@ -1,64 +1,97 @@
 /* eslint-disable max-len */
 /**
- * TODO Split logic into separate modules to keep it clear
+ * ! COULD || WOULD
  * TODO Connect Database to React frontend
- *  TODO CRUD functionality, Save document pushes content to firestore.
- *  ? Does this also store tabs and spaces? What about template literals?
- * TODO Create socket.io rooms, the room id is the name of the document
- * If user creates a new document, create a modal that asks for the name of the document, upon creation create room
- * Click event on document item: Enter socketIO room.
+ * TODO CRUD functionality, Save document pushes content to firestore.
+ * ---
+ * TODO Implement insertion of data attributes in the rendered HTML.
+ * With data attr I can style the HTML or show HTML tags in the rendereed window.
+ * TODO Describe Firestore / lowdb
+ * What is it used for and what does it do in this project
+ * TODO Update Repo description
+ * TODO Split code further up
+ * TODO Describe socket.io events and their use
+ * What does each event do and what is it used for?
  */
-
-/**
- * ! installation isn't clear (push to top)
- * ! Socket events have to be described. 2x
- * ! Work in modules, service for db logic, Persistence for logic related to an entity in db, controllers and services for app and domain logic
- * ! About description of the repo
- * ! External API data description, also describe how to obtain a key
- * ! Describe Firestore
- */
-
 /* eslint-enable max-len */
 
+require('dotenv').config();
 const express = require('express');
 const APP = express();
+const bodyParser = require('body-parser');
+
 const compression = require('compression');
-const dotenv = require('dotenv');
 const httpServer = require('http').createServer(APP);
 const io = require('socket.io')(httpServer);
 
-dotenv.config();
 const PORT = process.env.PORT || 8080;
 
+const docCache = require('./modules/docCache.js');
 // Basic Express setup
 APP.use(compression({level: 6}));
 APP.use(express.static(__dirname + '/public'));
 APP.set('view engine', 'ejs');
+APP.use(bodyParser.json());
+APP.use(bodyParser.urlencoded({extended: false}));
 APP.set('views', 'views');
 
-const User = require('./models/userModel');
-const newUser = new User('nadine', 'meijers', 1996);
-const userService = require('./service/userService');
+// Socket IO connections
+io.on('connection', (socket) => {
+  console.log(`${socket.id} Connected`);
+
+  socket.on('createDoc', (room) =>{
+    console.log(room.room);
+    socket.join(room.room);
+    console.log(io.sockets.adapter.rooms);
+
+    io.to(room.room).emit('getCache', docCache.getCache(room.room));
+    // io.to(room.room).emit('userJoin');
+
+    io.to(room.room).emit('onlineCount', io.sockets.adapter.rooms.get(room.room).size);
+  });
+
+  socket.on('message', (event) => {
+    socket.broadcast.emit('message', event);
+  });
+
+  socket.on('setText', (event) => {
+    io.to(event.room).emit('getText', event);
+  });
+
+  socket.on('getListings', () =>{
+    socket.emit('setListings', Object.keys(docCache.getAllCaches()));
+  });
+
+  socket.on('setCache', (event) =>{
+    console.log(event);
+    docCache.setCache(event.room, event);
+  });
+
+  // leave socket room
+  socket.on('disconnect', (room) => {
+    socket.leave(room);
+  });
+});
+
+
+APP.get('/doc/:room', (req, res)=>{
+  // dont forget to include document contents here, fetch em from firebase
+  const prep = req.params.room;
+  console.log(prep);
+  return res.render('docViewer', {data: 'templateText', room: prep});
+});
+
+APP.post('/doc/handleDoc', (req, res) => {
+  const room = req.body.docName;
+  // console.log(room);
+  res.redirect('/doc/' + room);
+});
 
 APP.get('/', (request, result) => {
-  userService.insertUserDb(newUser);
-  result.render('index', {
-    title: 'Markeer',
-  });
+  // userService.insertUserDb(newUser);
+  return result.render('homepage');
 });
 
 httpServer.listen(PORT, () => {
   console.log(`Listening to port http://localhost:${PORT}`);
-});
-
-// Socket IO connections
-io.on('connection', (socket) => {
-  console.log('connected');
-  socket.on('message', (event) => {
-    socket.broadcast.emit('message', event);
-  });
-});
-
-io.on('disconnect', (event) => {
-  console.log('user disconnected');
 });

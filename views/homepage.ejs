@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', { title: "Documents", css: 'homepage'})%>
+
+<body>
+  <head>
+    <h1>Documents</h1>
+  </head>
+
+  <main>
+    
+    <!-- make a document -->
+    <form action="/doc/handleDoc" method="POST">
+      <fieldset>
+        <legend>Create a document</legend>
+        <input type="text" name="docName" id="docName">
+        <button type="submit">Create</button>
+      </fieldset>
+    </form>
+    
+    <!-- we'll list all docs here -->
+    <div>
+
+    </div>
+  </main>
+</body>
+<script defer src="./js/homepage.js"></script>
+</html> 

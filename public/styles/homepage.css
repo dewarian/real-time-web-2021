@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+:root {
+  --ff: 'Open Sans', Helvetica, Tahoma, sans-serif;
+  --bg: hsl(202, 8%, 10%);
+  --editor: hsl(202, 8%, 15%);
+  --acc-100: hsl(48, 100%, 10%);
+  --acc-300: hsl(48, 100%, 30%);
+  --acc-500: hsl(48, 100%, 50%);
+  --acc-700: hsl(48, 100%, 70%);
+  --main-clr: hsl(0, 0%, 13%);
+  --main-txt: hsl(0, 0%, 100%);
+  --hover: hsla(0, 0%, 85%, 20%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hover: hsla(0, 0%, 85%, 5%);
+  }
+  body{
+    background-color: var(--bg);
+  }
+  h1, p, a, legend {
+    color: var(--main-txt);
+  }
+  svg {
+    fill: var(--main-txt);
+  }
+  .list-item:hover {
+    color: var(--acc-500);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-clr: hsl(262, 100%, 45%);
+    --bg: hsl(0, 0%, 95%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.75;
+  font-family: var(--ff);
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+a span {
+  flex-grow: 2;
+}
+
+a svg {
+  margin-right: 2em;
+}
+
+.list-item {
+  border-bottom: 1px solid hsla(48, 100%, 10%, 10%);
+  padding: 1em 1em;
+  transition: background 200ms;
+}
+
+.list-item:hover {
+  background-color: var(--hover);
+}

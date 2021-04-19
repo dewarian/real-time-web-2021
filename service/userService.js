@@ -13,11 +13,13 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 /**
- * @description Add user to firestore
+ * @description Add user to firestore,  Get data you want to push to firestore, require the service.
  * @param {Object} data Custom object of users containing info about user.
- * @param {*} first firstname
- * @param {*} last lastname
- * @param {*} born YearOfBirth
+ * @example
+  const User = require('./models/userModel');
+  const newUser = new User('FirstName', 'LastName', YearBorn);
+  const userService = require('./service/userService');
+  userService.insertUserDB(data)
  */
 function insertUserDb (data) {
   db.collection('users')

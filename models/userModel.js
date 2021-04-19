@@ -1,4 +1,9 @@
-/** Class representing usere */
+/**
+ * @title Class representing usere
+ * @example
+const User = require('./models/userModel');
+const newUser = new User('FirstName', 'LastName', YearBorn);
+*/
 class User {
   /**
    * @param {string} first  First name

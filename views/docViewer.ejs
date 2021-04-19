@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', { title: "Document", css: 'document'})%>
+
+<body id="<%= room %>">
+  <head>
+    <h1>Document</h1>
+  </head>
+  <p id="onlineCounter"></p>
+  <span id="saveButton">Save</span>
+  <main>
+    <textarea name="" id="editor" wrap="hard" autofocus></textarea>
+    <pre><code class="markdown" id="output"> </code></pre>
+  </main>
+
+</body>
+<script defer src="/js/docviewer.js"></script>
+</html> 
