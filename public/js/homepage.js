@@ -1,16 +1,13 @@
 console.log('homepage.js running');
 
 const socket = io();
-const main = document.getElementsByTagName('main')[0];
 const form = document.forms[0];
 form.addEventListener('submit', handleSubmit);
 
 /**
- * Function handles doc creation
- * ! Sir why is this giving a warning?
- * ? its the comment extension u showed me
- * Should be less of a hassle now
- * @param e - event
+ *
+ * @param {*} e
+ * @return {Boolean} If docName is empty submit, otherwise dont do anything
  */
 function handleSubmit (e) {
   e.preventDefault();
@@ -36,6 +33,10 @@ socket.on('setListings', (documents) =>{
   });
 });
 
+/**
+ * @title Create card item
+ * @param {String} title title of the card
+ */
 function generateCards (title) {
   const link = `
       <a class="list-item" href="/doc/${title}">
