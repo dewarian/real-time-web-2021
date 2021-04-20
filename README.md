@@ -205,11 +205,26 @@ Firestore is built in collections that can have documents but could be diverged 
 
 ### Dependencies
 
+<!-- 
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "firebase": "^8.4.1",
+    "lowdb": "^1.0.0",
+    "socket.io": "^4.0.1"
+     -->
+
 **Dependencies**
 |Name|Functionality|
 |:--|--|
 |[Express](https://www.npmjs.com/package/express)|Minimalistic unopinionated web framework.|
 |[Socket.io](https://www.npmjs.com/package/socket.io)|Node Package that uses WebSockets API and extends upon it.<br> Allows for real-time Bi-directional communication.|
+|[compression](https://www.npmjs.com/package/compression)|Compression middleware, compresses response bodies.|
+|[ejs](https://www.npmjs.com/package/ejs)|Templating engine for express.|
+|[firebase](https://www.npmjs.com/package/firebase)|Google's real time database solution and more.|
+|[lowdb](https://www.npmjs.com/package/lowdb)|Small JSON database for Node, Electron and, the browser.|
 
 **Dev Dependencies**
 |Name|Functionality|
@@ -236,9 +251,10 @@ To know what other settings I enabled in ESLint, check the [configuration file](
 
 ### Build scripts
 
-| Keyword | Action                                                |
-| :------ | ----------------------------------------------------- |
-| `start` | Start script, usually a build step or `node index.js` |
+| Keyword | Action                                                   |
+| :------ | ---------------------------------------------------------|
+| `start` | Start script, usually a build step or `node index.js`    |
+| `dev`   | development script, runs `nodemon server.js` continously |
 
 ### Frameworks && Libaries
 
