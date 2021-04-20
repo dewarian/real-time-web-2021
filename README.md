@@ -94,20 +94,6 @@ Style decisions are decisions that are made for the user interface of the applic
 |Dark Mode | | :white_check_mark: | | |
 |`//To Be continued` | | | | |
 
-<!--
-As mentioned, I will simplify this idea but ideally I would have the following features implemented:
-
-- **Giphy / Tenor GIF support**
-- **Proper markdown text support**
-  - Altering text with Bold, Italics and, Monospace text formatting. Be it with markdown or with selection and shortcuts.
-- **Replying to messages**, specifying to which message you are replying to.
-- **Deleting content**, Deleting conversations or messages that you don't want to have or share anymore.
-- **Personalification**, settings that you specifically want
-  - This could be colours, darkmode, how text is displayed.
-  - Profile, information about the user (you) and able to alter it.
-  - Login system, OAuth, Google login, Github login, anything to identify and gather user data.
-- **Media sharing**, Sharing media with friends, photos, videos or messages.
-- **Custom actions**, imagine customizable actions, E.g. where you can chat with a store and buy something with a command `/buy item1`. -->
 
 ## Technicalities
 
@@ -204,18 +190,6 @@ Firestore is built in collections that can have documents but could be diverged 
 
 
 ### Dependencies
-
-<!-- 
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "firebase": "^8.4.1",
-    "lowdb": "^1.0.0",
-    "socket.io": "^4.0.1"
-     -->
-
 **Dependencies**
 |Name|Functionality|
 |:--|--|
