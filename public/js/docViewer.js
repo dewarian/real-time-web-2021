@@ -10,7 +10,9 @@ socket.emit('createDoc', {room: room});
 const editor = document.getElementById('editor');
 editor.addEventListener('keyup', (event) => {
   const text = editor.value;
-  socket.emit('setText', {text: text, room: window.location.pathname.match(/[^\/]+$/)[0]});
+  socket.emit('setText', {
+    text: text,
+    room: window.location.pathname.match(/[^\/]+$/)[0]});
 
   const output = document.getElementById('output');
   output.innerHTML = md.render(text);
@@ -48,8 +50,7 @@ socket.on('onlineCount', (count) => {
   console.log(count);
   const counter = document.createElement('span');
   counter.value = count;
-  // move this elsewhere if you want
-  // document.getElementById('onlineCounter').appendChild(count);
+  document.getElementById('onlineCounter').append(`${count} editors online`);
 });
 
 socket.on('userJoin', (joinEvent) => {
