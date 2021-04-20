@@ -20,9 +20,8 @@
 require('dotenv').config();
 const express = require('express');
 const APP = express();
-const bodyParser = require('body-parser');
-
 const compression = require('compression');
+
 const httpServer = require('http').createServer(APP);
 const io = require('socket.io')(httpServer);
 
@@ -33,8 +32,8 @@ const docCache = require('./modules/docCache.js');
 APP.use(compression({level: 6}));
 APP.use(express.static(__dirname + '/public'));
 APP.set('view engine', 'ejs');
-APP.use(bodyParser.json());
-APP.use(bodyParser.urlencoded({extended: false}));
+APP.use(express.json());
+APP.use(express.urlencoded({extended: false}));
 APP.set('views', 'views');
 
 // Socket IO connections
