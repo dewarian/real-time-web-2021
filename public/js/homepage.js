@@ -14,10 +14,9 @@ function handleSubmit (e) {
 
   const docName = e.target[1].value;
 
+  socket.emit('createDoc', {room: docName});
   // handle client-side validation here.
   return docName != '' ? form.submit() : null;
-
-  // socket.emit('createDoc', {room: docName});
 }
 
 socket.on('redirectToRoom', (room) =>{
