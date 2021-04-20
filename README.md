@@ -75,23 +75,24 @@ Another cool idea would integration with Github, where you can add the markdown 
 **functionalities**
 Actions that should be possible in a markdown editor, ordered in a manner according to the MoSCoW method. The following rows in the tables are activities that an user should be able to complete or enhance it's experience.
 
-|                      |        Must        | Should |       Could        |       Would        |
-| :------------------- | :----------------: | :----: | :----------------: | :----------------: |
-| Write Markdown       | :white_check_mark: |        |                    |                    |
-| Multi User support   | :white_check_mark: |        |                    |                    |
-| Export Markdown      |                    |        | :white_check_mark: |                    |
-| Github Intergration  |                    |        |                    | :white_check_mark: |
-| Storage for markdown | :white_check_mark: |        |                    |                    |
-| Shortcuts            |                    |        |                    | :white_check_mark: |
-| Prefix auto-complete |                    |        |                    | :white_check_mark: |
-| `//To Be continued`  |                    |        |                    |                    |
+|                      |        Must        | Should |       Could        |       Would        |Implemented|
+| :------------------- | :----------------: | :----: | :----------------: | :----------------: |--|
+| Write Markdown       | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
+| Multi User support   | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
+| Export Markdown      |                    |        | :white_check_mark: |                    ||
+| Delete Markdownn     |                    |        | :white_check_mark: |                    ||
+| Github Intergration  |                    |        |                    | :white_check_mark: ||
+| Storage for markdown | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
+| Shortcuts            |                    |        |                    | :white_check_mark: ||
+| Prefix auto-complete |                    |        |                    | :white_check_mark: ||
+| `//To Be continued`  |                    |        |                    |                    ||
 
 **Style decisions**
 Style decisions are decisions that are made for the user interface of the application, UI experiences that will be added as the project is being developed.
-| |Must|Should|Could|Would|
-|:-------------------|:-:|:-:|:-:|:-:|
-|Syntax Highlighting | | | :white_check_mark: | |
-|Dark Mode | | :white_check_mark: | | |
+| |Must|Should|Could|Would|Implemented|
+|:-------------------|:-:|:-:|:-:|:-:|--|
+|Syntax Highlighting | | | :white_check_mark: | ||
+|Dark Mode | | :white_check_mark: | | |:heavy_check_mark:|
 |`//To Be continued` | | | | |
 
 
