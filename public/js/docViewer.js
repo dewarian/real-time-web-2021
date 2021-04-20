@@ -32,6 +32,9 @@ function handleSave () {
 const input = document.getElementById('input');
 
 socket.on('getCache', (data) => {
+  if (data === null) {
+    return data = 'Hello!';
+  };
   editor.innerHTML = data.text;
   const output = document.getElementById('output');
   hljs.highlightAll(input);
@@ -50,7 +53,7 @@ socket.on('onlineCount', (count) => {
   console.log(count);
   const counter = document.createElement('span');
   counter.value = count;
-  document.getElementById('onlineCounter').append(`${count} editors online`);
+  document.getElementById('onlineCounter').innerHTML =`${count} editors online`;
 });
 
 socket.on('userJoin', (joinEvent) => {

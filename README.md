@@ -43,6 +43,9 @@ The base functionality of **Markeer** is to write markdown with multiple users w
 What is the problem?
 The current problem is that I have zero experience with [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), this is problematic and thus want to create something with sockets. After some contemplating I decided to create a text editor, specifically an editor to write markdown.
 
+### Current problems
+After implementing the core functionalities and testing these I have found the some UX breaking bugs. It is mostly contained in the editing of markdown and saving this markdown. See [issue #7 about a more detailed rundown of the bugs.](https://github.com/dewarian/real-time-web-2021/issues/7)
+
 ## Solution
 
 The solution would be a markdown editor created in NodeJS and some client-side. The best solution would be a Google Docs killer <sub><sup>or competitor however you want to see it</sup></sub>.

@@ -48,7 +48,7 @@ io.on('connection', (socket) => {
     io.to(room.room).emit('getCache', docCache.getCache(room.room));
     // io.to(room.room).emit('userJoin');
 
-    io.to(room.room).emit('onlineCount', io.sockets.adapter.rooms.get(room.room).size);
+    // io.to(room.room).emit('onlineCount', io.sockets.adapter.rooms.get(room.room).size);s
   });
 
   socket.on('message', (event) => {

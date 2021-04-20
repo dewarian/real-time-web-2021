@@ -1,0 +1,14 @@
+{
+  "hello": {
+    "room": "hello",
+    "text": "Hello World\n\n# Hello\n\n## This is somewhat nigft"
+  },
+  "rtw": {
+    "room": "rtw",
+    "text": "Hello world\n\n# HellO World\n\n"
+  },
+  "test-env": {
+    "room": "test-env",
+    "text": "welp\n\n### Not Welp\n\n## It is welp\n\nbut also it is life"
+  }
+}
