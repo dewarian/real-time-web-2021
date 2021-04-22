@@ -11,7 +11,8 @@
   "rules": {
     "space-before-function-paren": ["error", "always"],
     "no-tabs": "error",
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "max-len": ["error", { "code": 120}]
   },
   "ignorePatterns": ["**/node_modules", "**/package.json"]
 }
