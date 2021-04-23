@@ -155,6 +155,22 @@ The data flows bi-directional.
 
 <sub>In courtesy of [asciiflow](https://asciiflow.com/).</sub>
 
+### Socket Events
+
+The project has defined a few socket events that socket.io listens to. Based on these events a certain action happens when the client calls knocks on the door,
+ |Name|Action|
+ |:-|--|
+ |[`Connection`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L40)|Listens when a client connects.|
+ |[`Message`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L54)|Emits the data from the markdown to clients.|
+ |[`createDoc`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L43)|Create a document (room), enter it and emit event `getCache`.|
+ |[`setText`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L58)|On event send object with markdown and roomname then emit `getText` event.|
+ |[`getText`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L59)|On event, set data in markdown editor.|
+ |[`getListings`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L62)|On event, return object of all documents.|
+ |[`setListings`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L63)|On event, create a list view of documents on homepage|
+ |[`setCache`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L66)|On event, save data object (room, data) to database.|
+ |[`getCache`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L48)|On event, send data from database to the room and insert it in the HTML for markdown rendering.|
+ |[`disconnect`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L72)|Yeet the user from the document (room).|
+
 ### Data Model
 
 The data model is structured like a real-time database as I am using firestore to keep track of what is happening within a markdown document.
