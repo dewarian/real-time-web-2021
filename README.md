@@ -46,6 +46,8 @@ The current problem is that I have zero experience with [WebSockets](https://dev
 ### Current problems
 After implementing the core functionalities and testing these I have found the some UX breaking bugs. It is mostly contained in the editing of markdown and saving this markdown. See [issue #7 about a more detailed rundown of the bugs.](https://github.com/dewarian/real-time-web-2021/issues/7)
 
+Besides the issue with the UX there is also no UI state changes when the data is being saved on click event.
+
 ## Solution
 
 The solution would be a markdown editor created in NodeJS and some client-side. The best solution would be a Google Docs killer <sub><sup>or competitor however you want to see it</sup></sub>.
@@ -88,6 +90,7 @@ Actions that should be possible in a markdown editor, ordered in a manner accord
 | Storage for markdown | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
 | Shortcuts            |                    |        |                    | :white_check_mark: ||
 | Prefix auto-complete |                    |        |                    | :white_check_mark: ||
+| **Pleasurable UI state** |                    |        | :white_check_mark: |||
 | `//To Be continued`  |                    |        |                    |                    ||
 
 **Style decisions**
@@ -123,6 +126,7 @@ Navigate to [localhost:8080](localhost:8080)
 ### Dataflow
 
 The data flows bi-directional.
+The data flows bi-directional because of socket.io, when a user joins a room it retrieves the data and sets that data to every client in that particular room. When a user saves a markdown file it stores it in the database.
 
 ```AsciiDoc
 ┌──CLIENTS─────┐         ┌──EVENTS──────────────┐      ┌──SERVER──────────┐    ┌──DATABASE────────┐
