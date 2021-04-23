@@ -8,6 +8,9 @@
 git clone https://github.com/dewarian/real-time-web-2021.git
 npm i
 npm run dev
+# OR
+yarn
+yarn run dev
 ```
 
 Or view the code with [Github1s](https://github1s.com/dewarian/real-time-web-2021/tree/asgmt/).
@@ -186,6 +189,21 @@ The project has defined a few socket events that socket.io listens to. Based on 
 
 ### Data Model
 
+Current data model is out of date, the data model and explanation mentioned below was based on firestore. Later I decided to go for [lowdb](https://github.com/typicode/lowdb), which is a small JSON database for node and such.
+
+```JSON
+{
+  "ROOMNAME": {
+    "room": "ROOMNAME",
+    "text": "Hello World\n\n# Hello\n\n## This is somewhat nifty"
+  },
+  // etc 
+}
+```
+> //INCOMING MESSAGE
+>If I decide to extend this application I will use a scalable solution such as firestore or other NoSQL databases to implement a more strict model. if not a postGreSQL Open Source Database such as [Supabase.](https://github.com/supabase/supabase)
+> //END MESSAGE
+
 The data model is structured like a real-time database as I am using firestore to keep track of what is happening within a markdown document.
 
 Firestore is built in collections that can have documents but could be diverged deeper with subcollections. To store multiple documents with each their own content I would have to use subcollections as a list of documents that contain information about the document.
@@ -265,17 +283,13 @@ To know what other settings I enabled in ESLint, check the [configuration file](
 
 ### Frameworks && Libaries
 
-#### Frameworks
-
-\*Frameworks here\*
 
 #### Libraries
 
-Firebase || Supabase, a real-time database, one is based on collections (noSql) while the latter is built ontop of PostgreSQL.
+[Firestore](https://github.com/googleapis/nodejs-firestore) via the Firebase Node.js Server SDK.
+Firestore is a document based noSQL data storage solution from Google. In comparison to Firebase it allows for compound queries and receive shallow documents.
 
-### API
-
-The first API I was thinking of is the [Giphy API](https://developers.giphy.com/docs/sdk#design-guidelines).
+For more differences between Firestore and firebase check out [the documentation of google](https://firebase.google.com/docs/database/rtdb-vs-firestore).
 
 # Feedback
 
