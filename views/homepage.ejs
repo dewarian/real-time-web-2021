@@ -6,26 +6,28 @@
 <body>
   <main>
     <header>
-      <h1>Markdown files</h1>
-      <p>Markeer is a collaborative markdown editor in which you can work together to write markdown files. Create a new file or enter an existing one and share the link with your collaborators!</p>
-    </header>
-    <!-- make a document -->
-    <form action="/doc/handleDoc" method="POST">
-      <fieldset>
-        <legend>Find or Create a markdown file</legend>
-        <input type="text" name="docName" id="docName" autocomplete="off" list="documentList" placeholder="Document name">
-        <button type="submit">Find</button>
-      </fieldset>
-    </form>
+      <h1 class="typing-demo">Markdown files</h1>
+      <section>
+        <p>Markeer is a collaborative markdown editor in which you can work together to write markdown files. Create a new file or enter an existing one and share the link with your collaborators!</p>
+        <!-- make a document -->
+        <form action="/doc/handleDoc" method="POST">
+          <fieldset>
+            <legend>Find or create a markdown file</legend>
+            <label for="docName">Document name</label>
+              <input type="text" name="docName" id="docName" autocomplete="off" list="documentList" placeholder="Document name">
+              <button type="submit">Find</button>
+          </fieldset>
+        </form>
+      </section>
+  </header>
     <!-- Create datalist for for selection -->
-    <datalist id="documentList">
-
-    </datalist>
+    <datalist id="documentList"></datalist>
     <!-- we'll list all docs here -->
-    <div>
+    <div id="documents">
 
     </div>
   </main>
+  <button id="theme-switcher">Switch theme</button>
 </body>
 <script defer src="./js/homepage.js"></script>
 </html> 

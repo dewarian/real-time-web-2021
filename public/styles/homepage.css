@@ -1,126 +1,219 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap');
 
 :root {
-  --ff: 'Open Sans', Helvetica, Tahoma, sans-serif;
-  --bg: hsl(202, 8%, 10%);
-  --editor: hsl(202, 8%, 15%);
-  --acc-100: hsl(48, 100%, 10%);
-  --acc-300: hsl(48, 100%, 30%);
-  --acc-500: hsl(48, 100%, 50%);
-  --acc-700: hsl(48, 100%, 70%);
-  --main-clr: hsl(0, 0%, 13%);
-  --main-txt: hsl(0, 0%, 100%);
-  --hover: hsla(0, 0%, 85%, 20%);
+  --item-bg:hsl(0, 0%, 100%);
+  --bg: hsl(109, 0%, 96%);
+  --txt: hsl(215, 19%, 21%);
+  --white-txt:hsl(0, 0%, 100%);
+  --snd-txt: hsl(215, 19%, 50%);
+  --acc-200: hsl(203, 80%, 20%);
+  --acc-400: hsl(203, 80%, 49%);
+  --acc-600: hsl(203, 80%, 60%);
+  --shadow: rgba(9,45,66,.25);
+  --font-titling: 'Space Mono', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --hover: hsla(0, 0%, 85%, 5%);
-  }
-  body{
-    background-color: var(--bg);
-  }
-  h1, p, a, legend {
-    color: var(--main-txt);
-  }
-  svg {
-    fill: var(--main-txt);
-  }
-  .list-item:hover {
-    color: var(--acc-500);
-  }
-}
+[data-theme="dark"] {
+  --bg: hsl(238, 94%, 15%);
+  --body: hsl(238, 94%, 10%);
+  --item-bg: hsl(238, 94%, 20%);
+  --acc-200: hsl(155, 68%, 27%);
+  --acc-400: hsl(155, 68%, 47%);
+  --acc-600: hsl(155, 68%, 60%);
+  --shadow: rgba(66, 69, 71, 0.25);
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --main-clr: hsl(262, 100%, 45%);
-    --bg: hsl(0, 0%, 95%);
-  }
+  --txt: hsl(215, 19%, 21%);
+  --white-txt:hsl(0, 0%, 100%);
+  --snd-txt: hsl(237, 18%, 66%);
 }
 
 * {
   box-sizing: border-box;
-  line-height: 1.75;
-  font-family: var(--ff);
+  line-height: 1.6;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
-main {
-  max-width: 50em;
-  margin: 0 auto;
+:focus {
+  outline: 3px solid var(--acc-600);
+  outline-offset: 2px;   
 }
 
-header { 
-  margin: 0 auto;
+body {
+  margin: 0;
 }
 
-fieldset {
-  display: flex;
-}
-
-input {
-  flex-grow: 1;
-  padding: 0.8em;
-  background-color: var(--hover);
-  border: var(--hover);
-  color: var(--main-txt);
-}
-
-input::placeholder {
-  color: var(--acc-300);
-}
-
-input:focus-within, input:focus {
-  background-color: var(--bg);
-  border-bottom: blueviolet;
-}
-
-fieldset {
-  background-color: var(--hover);
-}
-
-legend{
-  padding: 0 1em;
-}
-
-fieldset button {
-  width: clamp(50px, 8em, 8.5em);
-  background-color: transparent;
-  border: 3px solid var(--acc-700);
-  color: var(--acc-700);
-  transition: background-color 200ms, color 200ms;
-}
-
-fieldset button:hover {
-  background-color: var(--acc-700);
-  border: 3px solid var(--acc-700);
-  color: var(--main-clr);
-  cursor: pointer;
+header {
+  margin-bottom: 1em;
 }
 
 p {
-  max-width: clamp(65ch, 600px, 75ch);
+  max-width: clamp(65ch, calc(50em - 4em), 76ch);
 }
 
-a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+header p {
+  color: var(--snd-txt);
 }
 
-a span {
-  flex-grow: 2;
+h1, h2, h3 {
+  font-family: var(--font-titling);
+  letter-spacing: 2px;
+  color: var(--acc-400);
 }
 
-a svg {
-  margin-right: 2em;
+main {
+  max-width: clamp(65ch, 50em, 55em);
+  margin: 0 auto;
+  padding: 2em;
+  height: 100vh;
+  background-color: var(--bg);
+  box-shadow: 0 0 4px 2px var(--shadows);
+}
+
+/* 
+=====================
+Title animation
+=====================
+*/
+
+.typing-demo {
+  width: 9.6em;
+  animation: typing 1s steps(16), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+@keyframes typing {from {width: 0}}
+@keyframes blink {50% {border-color: transparent}}
+
+/* 
+=====================
+Document creator / Finder
+=====================
+*/
+form {
+  /* padding: 1em 2em; */
+  border-radius: .25rem;
+}
+
+fieldset {
+  padding: 1em 0;
+  border: 2px solid var(--acc-400);
+  border: none;
+  border-radius: 0.75rem;
+}
+
+fieldset legend {
+  color: var(--acc-400);
+}
+
+label[for="docName"] {
+  display: block;
+}
+
+input[name="docName"] {
+  background-color: transparent;
+  width: calc(100% - 10em);
+  border-radius: 0.75rem;
+  border: 2px solid var(--acc-400);
+  padding: 1em 0.75em;
+}
+
+fieldset button {
+  position: relative;
+  width: 125px;
+  padding: 0.5em 0;
+  background-color: var(--acc-400);
+  border: 2px solid var(--acc-400);
+  border-radius: 2rem;
+  color: var(--white-txt);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 100ms ease-in, background-color 200ms ease-in, box-shadow 200ms ease-in-out 100ms;
+}
+
+fieldset button:hover{
+  color: var(--acc-400);
+  background-color: transparent;
+  box-shadow: 0.2em 0.2em 0 0 var(--acc-400);
+  cursor: pointer;
+}
+
+/* 
+=====================
+Markdown Documents
+=====================
+*/
+#documents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 0.5em;
+  align-items: flex-start;
 }
 
 .list-item {
-  border-bottom: 1px solid hsla(48, 100%, 10%, 10%);
-  padding: 1em 1em;
-  transition: background 200ms;
+  background-color: var(--item-bg);
+  border-radius: .25rem;
+  box-shadow: 0 1px 0 var(--shadow);
+  padding: .75rem 1.25rem;
+  display: flex;
+
+  text-decoration: none;
+  color: var(--acc-200);
+  transition: filter 200ms, box-shadow 200ms;
+}
+
+.list-item span {
+  flex-grow: 1;
 }
 
 .list-item:hover {
-  background-color: var(--hover);
+  filter: brightness(90%);
+  box-shadow: 0 0px 0 var(--shadow);
+
 }
+
+@media (prefers-color-scheme: dark) {
+  /* here comes dark mode */
+    :root {
+      --bg: hsl(238, 94%, 15%);
+      --body: hsl(238, 94%, 10%);
+      --item-bg: hsl(238, 94%, 20%);
+      --acc-200: hsl(155, 68%, 27%);
+      --acc-400: hsl(155, 68%, 47%);
+      --acc-600: hsl(155, 68%, 60%);
+      --shadow: rgba(66, 69, 71, 0.25);
+  
+      --txt: hsl(215, 19%, 21%);
+      --white-txt:hsl(0, 0%, 100%);
+      --snd-txt: hsl(237, 18%, 66%);
+    }
+    body {
+      background-color:var(--body);
+    }
+    h1, h2, h3, fieldset legend, *[for="docName"], input::placeholder {
+      color: var(--white-txt);
+    }
+    .list-item {
+      color: var(--white-txt);
+      background-color: transparent;
+      border: 2px solid hsla(237, 74%, 23%, 0.8);
+      transition: color 100ms ease-in, border 150ms ease-in, box-shadow 200ms ease-in-out;
+
+    }
+    .list-item:hover, .list-item:focus {
+      color: var(--acc-400);
+      background-color: transparent;
+      border: 2px solid var(--acc-400);
+      box-shadow: 0.2em 0.2em 0 0 var(--acc-400);
+      cursor: pointer;
+      fill: var(--acc-400);
+    }
+    svg {
+      fill: var(--white-txt);
+    }
+    .list-item:hover svg {
+      fill: var(--acc-400);
+    }
+  }

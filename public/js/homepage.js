@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 console.log('homepage.js running');
 
 const socket = io();
@@ -57,3 +58,19 @@ function generateDatalist (title) {
   `;
   document.getElementById('documentList').innerHTML += datalistItem;
 }
+
+
+/*
+LOGIC TO CHANGE STYLES
+*/
+document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.setAttribute('data-theme', 'dark');
+});
+
+const themeSwitcher = document.getElementById('theme-switcher');
+themeSwitcher.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const switchToTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', switchToTheme);
+  console.log(`GO GO GO: ${switchToTheme}`);
+});
