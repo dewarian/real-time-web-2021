@@ -44,6 +44,19 @@
   font-family: var(--ff);
 }
 
+main {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+header { 
+  margin: 0 auto;
+}
+
+p {
+  max-width: clamp(65ch, 600px, 75ch);
+}
+
 a {
   display: flex;
   align-items: center;

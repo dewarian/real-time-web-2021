@@ -4,12 +4,11 @@
 <%- include('partials/head', { title: "Documents", css: 'homepage'})%>
 
 <body>
-  <head>
-    <h1>Documents</h1>
-  </head>
-
   <main>
-    
+    <header>
+      <h1>Markdown files</h1>
+      <p>Markeer is a collaborative markdown editor in which you can work together to write markdown files. Create a new file or enter an existing one and share the link with your collaborators!</p>
+    </header>
     <!-- make a document -->
     <form action="/doc/handleDoc" method="POST">
       <fieldset>
