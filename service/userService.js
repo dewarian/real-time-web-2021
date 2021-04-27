@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 /**
- * @description Add user to firestore,  Get data you want to push to firestore, require the service.
+ * @description Add user to firestore, Get data you want to push to firestore, require the service.
  * @param {Object} data Custom object of users containing info about user.
  * @example
   const User = require('./models/userModel');
