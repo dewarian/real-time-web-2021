@@ -1,7 +1,16 @@
-
+/**
+ * Import statement for database operations.
+ */
 const docCache = require('./docCache.js');
 
 
+/**
+ * @title socket.io events
+ * @description socket.io events in a modularized format.
+ * Client is the event and server are the server side operations.
+ * @param {Object} client socket instance, the comm. between client and server.
+ * @param {Object} server Server sided instance of socket.io
+ */
 exports.ioEvents = (client, server) => {
   client.on('createDoc', (room) => {
     client.join(room.room);
