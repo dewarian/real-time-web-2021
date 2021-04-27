@@ -28,6 +28,7 @@ socket.emit('getListings');
 socket.on('setListings', (documents) =>{
   Object.values(documents).map((key) => {
     generateCards(key);
+    generateDatalist(key);
     console.log(key);
   });
 });
@@ -44,4 +45,15 @@ function generateCards (title) {
       </a>
     `;
   document.getElementsByTagName('div')[0].innerHTML += link;
+}
+
+/**
+ *
+ * @param {String} title html element
+ */
+function generateDatalist (title) {
+  const datalistItem = `
+    <option value="${title}">
+  `;
+  document.getElementById('documentList').innerHTML += datalistItem;
 }

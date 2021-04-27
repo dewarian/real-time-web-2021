@@ -53,6 +53,50 @@ header {
   margin: 0 auto;
 }
 
+fieldset {
+  display: flex;
+}
+
+input {
+  flex-grow: 1;
+  padding: 0.8em;
+  background-color: var(--hover);
+  border: var(--hover);
+  color: var(--main-txt);
+}
+
+input::placeholder {
+  color: var(--acc-300);
+}
+
+input:focus-within, input:focus {
+  background-color: var(--bg);
+  border-bottom: blueviolet;
+}
+
+fieldset {
+  background-color: var(--hover);
+}
+
+legend{
+  padding: 0 1em;
+}
+
+fieldset button {
+  width: clamp(50px, 8em, 8.5em);
+  background-color: transparent;
+  border: 3px solid var(--acc-700);
+  color: var(--acc-700);
+  transition: background-color 200ms, color 200ms;
+}
+
+fieldset button:hover {
+  background-color: var(--acc-700);
+  border: 3px solid var(--acc-700);
+  color: var(--main-clr);
+  cursor: pointer;
+}
+
 p {
   max-width: clamp(65ch, 600px, 75ch);
 }

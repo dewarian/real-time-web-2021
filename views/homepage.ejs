@@ -12,12 +12,15 @@
     <!-- make a document -->
     <form action="/doc/handleDoc" method="POST">
       <fieldset>
-        <legend>Create a document</legend>
-        <input type="text" name="docName" id="docName">
-        <button type="submit">Create</button>
+        <legend>Find or Create a markdown file</legend>
+        <input type="text" name="docName" id="docName" autocomplete="off" list="documentList" placeholder="Document name">
+        <button type="submit">Find</button>
       </fieldset>
     </form>
-    
+    <!-- Create datalist for for selection -->
+    <datalist id="documentList">
+
+    </datalist>
     <!-- we'll list all docs here -->
     <div>
 
