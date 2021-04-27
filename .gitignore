@@ -3,3 +3,4 @@ node_modules
 school
 example
 .env
+yarn.lock
