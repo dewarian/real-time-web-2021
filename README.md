@@ -26,7 +26,7 @@ For school documentation please navigate to the [docs branch](https://github.com
 - [Future](#future)
 - [Technicalities](#technicalities)
   - [Installation](#installation)
-  - [Dataflow](#dataflow)
+  - [Data lifecycle](#data-lifecycle)
   - [Dependencies](#dependencies)
   - [Coding conventions](#coding-conventions)
   - [Git conventions](#git-conventions)
@@ -126,7 +126,7 @@ yarn run dev #or yarn run start
 Navigate to [localhost:8080](localhost:8080)
 ```
 
-### Dataflow
+### Data lifecycle
 
 The data flows bi-directional.
 The data flows bi-directional because of socket.io, when a user joins a room it retrieves the data and sets that data to every client in that particular room. When a user saves a markdown file it stores it in the database.
@@ -235,7 +235,9 @@ Firestore is built in collections that can have documents but could be diverged 
                                └─────────────────────────┘
 ```
 
-### Data cycle
+### Actor Diagram
+
+Describing the end product diagram flow how I imagine a user would go through the application.
 
 ![Datacycle](https://user-images.githubusercontent.com/13199349/114987987-1a645c80-9e96-11eb-9ffd-e3a7dc51ef7d.png)
 
