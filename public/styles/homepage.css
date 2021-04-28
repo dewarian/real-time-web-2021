@@ -65,7 +65,7 @@ main {
   max-width: clamp(65ch, 50em, 55em);
   margin: 0 auto;
   padding: 2em;
-  height: 100vh;
+  height: calc(100vh - 28px);
   background-color: var(--bg);
   box-shadow: 0 0 4px 2px var(--shadows);
 }
