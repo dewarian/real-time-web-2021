@@ -21,7 +21,6 @@
 
 * {
   box-sizing: border-box;
-  /* line-height: 1.6; */
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -46,6 +45,11 @@ body {
   background-color: var(--bg);
 }
 
+/* 
+==============================
+STYLING FOR TOPBAR
+==============================
+*/
 header {
   margin-bottom: 1em;
 }
@@ -70,7 +74,11 @@ header p {
   color: var(--snd-txt);
 }
 
-
+/* 
+==============================
+STYLING FOR SAVE BUTTON
+==============================
+*/
 #saveButton {
   margin: 0.5em 0;
   text-align: center;
@@ -110,6 +118,11 @@ main {
   display: contents;
 }
 
+/* 
+==============================
+STYLING FOR RENDERED MARKDOWN
+==============================
+*/
 #editor {
   resize: none;
   border: none;
@@ -122,6 +135,7 @@ main {
   caret-shape: block;
 }
 
+/* Makes the text wrap after a certain amount of text */
 pre #output p {
   word-break: normal;
   white-space: normal;
@@ -131,13 +145,13 @@ pre {
   padding: 0.5em;
 }
 
+/* LIST (ITEMS) */
 .markdown > * {
   margin: 0;
   line-height: normal !important;
 }
 
-
-
+.markdown ul li p {margin: 0;}
 .markdown ul, .markdown ul li {
   margin: 0;
 }
@@ -150,6 +164,7 @@ pre {
   margin-top: -1em;
 }
 
+/* LINE BREAK */
 .markdown hr {
   border: 1px solid var(--code-border);
 }
@@ -158,6 +173,7 @@ pre {
   max-width: 100%;
 }
 
+/* LINKS */
 .markdown a {
   text-decoration: none;
 }
@@ -166,6 +182,7 @@ pre {
   text-decoration: underline;
 }
 
+/* CODE BLOCKS */
 .markdown > pre {
   display: block;
   padding: 9.5px;
@@ -179,11 +196,7 @@ pre {
   border-radius: 4px;
 }
 
-/* pre {
-  display: block;
-  overflow-wrap: break-word;
-} */
-
+/* CODE SNIPPETS */
 .markdown p code {
   padding: .2em .4em;
   margin: 0;
@@ -193,6 +206,7 @@ pre {
   border-radius: 4px;
 }
 
+/* TABLE */
 .markdown table {
   display: block;
   width: max-content;
@@ -209,4 +223,17 @@ pre {
 
 .markdown table tr:nth-child(2n) {
   background-color: var(--acc-800);
+}
+
+/* (BLOCK) QUOTE */
+.markdown blockquote {
+  border-left: 4px solid var(--acc-400);
+  border-radius: 4px;
+  padding-left: 0.5em;
+  background-color: var(--item-bg);
+}
+
+/* (BLOCK) QUOTE FIX */
+.markdown blockquote p {
+  margin: 0;
 }
