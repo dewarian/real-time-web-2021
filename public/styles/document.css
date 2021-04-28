@@ -1,140 +1,93 @@
- @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap');
 
 :root {
-  --ff: 'Open Sans', Helvetica, Tahoma, sans-serif;
-  --bg: hsl(202, 8%, 10%);
-  --editor: hsl(202, 8%, 15%);
-  --acc-100: hsl(48, 100%, 10%);
-  --acc-300: hsl(48, 100%, 30%);
-  --acc-500: hsl(48, 100%, 50%);
-  --acc-700: hsl(48, 100%, 70%);
-  --main-clr: hsl(0, 0%, 13%);
-  --main-txt: hsl(0, 0%, 100%);
+  --item-bg:hsl(0, 0%, 100%);
+  --bg: hsl(109, 0%, 96%);
+  --txt: hsl(215, 19%, 21%);
+  --white-txt:hsl(0, 0%, 100%);
+  --snd-txt: hsl(215, 19%, 50%);
+  --acc-200: hsl(203, 80%, 20%);
+  --acc-400: hsl(203, 80%, 49%);
+  --acc-600: hsl(203, 80%, 60%);
+  --shadow: rgba(9,45,66,.25);
+  --font-titling: 'Space Mono', monospace;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --main-clr: hsl(262, 100%, 45%);
-    --bg: hsl(0, 0%, 95%);
-  }
-}
+
 
 * {
   box-sizing: border-box;
-  line-height: 1.75;
-  font-family: var(--ff);
-  color: var(--main-txt);
+  line-height: 1.6;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+:focus {
+  outline: 3px solid var(--acc-600);
+  outline-offset: 2px;   
 }
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: var(--bg);
 }
 
-nav {
+header {
+  margin-bottom: 1em;
+}
+
+p {
+  max-width: clamp(65ch, calc(50em - 4em), 76ch);
+}
+
+header {
   display: flex;
-  background-color: var(--main-clr);
-  color: var(--main-txt);
-  padding: 0.5em 2em;
-  margin-bottom: 1.5em;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  align-content: center;
+  background-color: var(--acc-200);
+  padding: 0 2em;
 }
 
-nav > p {
+header h1 {
   flex-grow: 1;
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.01rem;
+  font-family: var(--font-titling);
+  letter-spacing: 2px;
+  color: var(--acc-400);
 }
 
-nav button {
-  margin-left: 2em;
+header p {
+  color: var(--snd-txt);
 }
 
-.inv-btn {
-  padding: 8px 12px;
-  margin: 8px;
-  min-width: 64px;
-  border: none;
-  border-radius: 4px;
-  background-color: transparent;
-  color: var(--main-txt);
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-}
-
-.inv-btn:hover {
-  background-color: hsla(0, 0%, 100%, 0.08);
-}
-
-main {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-
-main pre {
-  display: block;
-  width: 50%;
-}
-
-main pre code h1:before{
-  content: '<h1>';
-  position: relative;
-}
-
-main pre code h1:after{
-  content: '</h1>';
-  position: relative;
-}
-
-
-#editor {
-  resize: none;
-  width: 40%;
-  height: 80vh;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--editor);
-  box-shadow: 0 0 10px hsla(0, 0%, 25%, 0.5);
-
-  box-sizing: border-box;
-  padding: 1em;
-}
-
-#editor div {
-  display: block;
-}
-
-#editor:focus-within {
-  border: none;
-  outline: none;
-}
-
-#editor::selection, #editor::-moz-selection, #editor::-webkit-selection {
-  background: var(--acc-100);
-}
 
 #saveButton {
-  padding: 8px 12px;
-  margin: 8px;
-  min-width: 64px;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--acc-500);
-  color: var(--editor);
+  margin: 21.44px 0;
+  text-align: center;
+  width: 125px;
+  height: 3em;
+  padding: 0.5em 0;
+  background-color: var(--acc-400);
+  border: 2px solid var(--acc-400);
+  border-radius: 2rem;
+  color: var(--white-txt);
   font-weight: bold;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.1rem;
+  transition: color 100ms ease-in, background-color 200ms ease-in, box-shadow 200ms ease-in-out 100ms;
 }
 
 #saveButton:hover {
-  background-color: var(--acc-300);
+  color: var(--acc-400);
+  background-color: transparent;
+  box-shadow: 0.2em 0.2em 0 0 var(--acc-400);
+  cursor: pointer;
 }
 
-#output *{
-  color: var(--main-txt);
+
+main {
+  padding: 0 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1em;
+}
+
+#editor, #output {
+  height: calc(100vh - 10vh);
 }

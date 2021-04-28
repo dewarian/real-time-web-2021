@@ -4,11 +4,11 @@
 <%- include('partials/head', { title: "Document", css: 'document'})%>
 
 <body id="<%= room %>">
-  <head>
+  <header>
     <h1><%= room %></h1>
-  </head>
-  <p id="onlineCounter"></p>
-  <span id="saveButton">Save</span>
+    <p id="onlineCounter"></p>
+    <span id="saveButton">Save</span>
+  </header>
   <main>
     <textarea name="" id="editor" wrap="hard" autofocus></textarea>
     <pre><code class="markdown" id="output"> </code></pre>
