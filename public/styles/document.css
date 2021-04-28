@@ -1,34 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap');
 
 :root {
   --item-bg:hsl(0, 0%, 100%);
   --bg: hsl(109, 0%, 96%);
   --txt: hsl(215, 19%, 21%);
   --white-txt:hsl(0, 0%, 100%);
-  --snd-txt: hsl(215, 19%, 50%);
-  --acc-200: hsl(203, 80%, 20%);
-  --acc-400: hsl(203, 80%, 49%);
-  --acc-600: hsl(203, 80%, 60%);
+  --snd-txt: hsla(215, 19%, 50%, 1);
+  --acc-200: hsla(203, 80%, 20%, 1);
+  --acc-400: hsla(203, 80%, 49%, 1);
+  --acc-600: hsla(203, 80%, 60%, 1);
+  --acc-800: hsla(203, 80%, 80%, 0.3);
   --shadow: rgba(9,45,66,.25);
   --font-titling: 'Space Mono', monospace;
+  /* MARKDOWN */
+  --alt-row: hsl(214, 13%, 80%);
+  --table-border: hsl(211, 12%, 35%);
+  --code-border: hsl(0, 0%, 80%);
 }
 
 
 
 * {
   box-sizing: border-box;
-  line-height: 1.6;
+  /* line-height: 1.6; */
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 :focus {
   outline: 3px solid var(--acc-600);
   outline-offset: 2px;   
+  border-radius: 15px;
 }
 
 body {
   margin: 0;
+  background-color: var(--bg);
 }
 
 header {
@@ -42,8 +49,9 @@ p {
 header {
   display: flex;
   align-content: center;
-  background-color: var(--acc-200);
+  /* background-color: var(--acc-200); */
   padding: 0 2em;
+  box-shadow: 0 0 5px 3px var(--shadow);
 }
 
 header h1 {
@@ -80,14 +88,119 @@ header p {
   cursor: pointer;
 }
 
+#saveButton:focus {
+  outline: 1px solid black;
+}
+
 
 main {
   padding: 0 2em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 0.5em;
+  height: 80vh;
 }
 
-#editor, #output {
-  height: calc(100vh - 10vh);
+.wrapper {
+  display: contents;
+}
+
+#editor {
+  resize: none;
+  border: none;
+  border-radius: 0.275rem;
+  padding: 0.5em;
+  box-shadow: 0 0 2px 2px var(--shadow);
+  font-family: var(--font-titling);
+  min-height: 40vh;
+
+}
+
+pre #output p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+pre {
+  padding: 0.5em;
+}
+
+.markdown > * {
+  margin: 0;
+  line-height: normal !important;
+}
+
+
+
+.markdown ul, .markdown ul li {
+  margin: 0;
+}
+
+.markdown ul li {
+  margin-bottom: -0.5rem;
+}
+
+.markdown ul li > ul li {
+  margin-top: -1em;
+}
+
+.markdown hr {
+  border: 1px solid var(--code-border);
+}
+
+.markdown img {
+  max-width: 100%;
+}
+
+.markdown a {
+  text-decoration: none;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown > pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: var(--item-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+}
+
+/* pre {
+  display: block;
+  overflow-wrap: break-word;
+} */
+
+.markdown p code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--item-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+}
+
+.markdown table {
+  display: block;
+  width: max-content;
+  margin-top: 0;
+  margin-bottom: 1em;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown table td, .markdown table th {
+  padding: 6px 13px;
+  border: 1px solid var(--table-border);
+}
+
+.markdown table tr:nth-child(2n) {
+  background-color: var(--acc-800);
 }

@@ -7,10 +7,12 @@
   <header>
     <h1><%= room %></h1>
     <p id="onlineCounter"></p>
-    <span id="saveButton">Save</span>
+    <span tabindex="2" id="saveButton">Save</span>
   </header>
   <main>
+    <div class="wrapper">
     <textarea name="" id="editor" wrap="hard" autofocus></textarea>
+  </div>
     <pre><code class="markdown" id="output"> </code></pre>
   </main>
 

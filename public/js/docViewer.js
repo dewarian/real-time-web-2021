@@ -2,6 +2,7 @@ console.log('docviewer.js running');
 
 const socket = io();
 const md = window.markdownit();
+hljs.highlightAll();
 
 const room = document.body.id;
 
@@ -29,7 +30,7 @@ function handleSave () {
     socket.emit('setCache', {room: room, text: editor.value});
   }
 }
-const input = document.getElementById('input');
+const input = document.getElementById('editor');
 
 socket.on('getCache', (data) => {
   if (data === null) {
@@ -37,7 +38,7 @@ socket.on('getCache', (data) => {
   };
   editor.innerHTML = data.text;
   const output = document.getElementById('output');
-  hljs.highlightAll(input);
+  hljs.highlightElement(output);
   output.innerHTML = md.render(data.text);
 });
 
