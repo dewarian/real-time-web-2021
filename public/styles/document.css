@@ -19,8 +19,6 @@
   --code-border: hsl(0, 0%, 80%);
 }
 
-
-
 * {
   box-sizing: border-box;
   /* line-height: 1.6; */
@@ -33,6 +31,16 @@
   border-radius: 15px;
 }
 
+/* REQUIRED SEPARATION OTHERWISE IT WONT WORK */
+::selection {
+  color: var(--white-txt);
+  background-color: var(--acc-400);
+}
+::-moz-selection {
+  color: var(--white-txt);
+  background-color: var(--acc-400);
+}
+
 body {
   margin: 0;
   background-color: var(--bg);
@@ -41,10 +49,6 @@ body {
 header {
   margin-bottom: 1em;
 }
-
-/* p {
-  max-width: clamp(65ch, calc(50em - 4em), 76ch);
-} */
 
 header {
   display: flex;
@@ -114,7 +118,8 @@ main {
   box-shadow: 0 0 2px 2px var(--shadow);
   font-family: var(--font-titling);
   min-height: 40vh;
-
+  caret-color: red;
+  caret-shape: block;
 }
 
 pre #output p {

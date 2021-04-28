@@ -7,7 +7,7 @@ const io = require('socket.io')(httpServer);
 const PORT = process.env.PORT || 8080;
 
 // Socket.io setup, imports events module and use those in io.on
-const events = require('./modules/ioEvents');
+const events = require('./modules/socketEvents');
 io.on('connection', (socket) => {
   events.ioEvents(socket, io);
 });
