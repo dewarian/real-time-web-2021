@@ -14,19 +14,7 @@
   --font-titling: 'Space Mono', monospace;
 }
 
-[data-theme="dark"] {
-  --bg: hsl(238, 94%, 15%);
-  --body: hsl(238, 94%, 10%);
-  --item-bg: hsl(238, 94%, 20%);
-  --acc-200: hsl(155, 68%, 27%);
-  --acc-400: hsl(155, 68%, 47%);
-  --acc-600: hsl(155, 68%, 60%);
-  --shadow: rgba(66, 69, 71, 0.25);
 
-  --txt: hsl(215, 19%, 21%);
-  --white-txt:hsl(0, 0%, 100%);
-  --snd-txt: hsl(237, 18%, 66%);
-}
 
 * {
   box-sizing: border-box;
@@ -67,7 +55,7 @@ main {
   padding: 2em;
   height: calc(100vh - 28px);
   background-color: var(--bg);
-  box-shadow: 0 0 4px 2px var(--shadows);
+  box-shadow: 0 0 2px 2px var(--shadow);
 }
 
 /* 
@@ -173,9 +161,8 @@ Markdown Documents
   box-shadow: 0 0px 0 var(--shadow);
 
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
-  /* here comes dark mode */
     :root {
       --bg: hsl(238, 94%, 15%);
       --body: hsl(238, 94%, 10%);
@@ -216,4 +203,18 @@ Markdown Documents
     .list-item:hover svg {
       fill: var(--acc-400);
     }
-  }
+  } */
+
+  /* [data-theme="dark"] {
+    --bg: hsl(238, 94%, 15%);
+    --body: hsl(238, 94%, 10%);
+    --item-bg: hsl(238, 94%, 20%);
+    --acc-200: hsl(155, 68%, 27%);
+    --acc-400: hsl(155, 68%, 47%);
+    --acc-600: hsl(155, 68%, 60%);
+    --shadow: rgba(66, 69, 71, 0.25);
+  
+    --txt: hsl(215, 19%, 21%);
+    --white-txt:hsl(0, 0%, 100%);
+    --snd-txt: hsl(237, 18%, 66%);
+  } */
