@@ -36,4 +36,8 @@ exports.ioEvents = (client, server) => {
   client.on('disconnect', (room) => {
     client.leave(room);
   });
+
+  client.on('connect_error', (error) => {
+    console.log(`connect_error due to ${error.message}`);
+  });
 };
