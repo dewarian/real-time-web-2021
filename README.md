@@ -1,4 +1,5 @@
 # Real time Markdown Editor
+![image](https://user-images.githubusercontent.com/13199349/116452543-1fde8100-a85e-11eb-838f-d1ed39b80870.png)
 
 **TL;DR**
 **Markeer**, a collaborative markdown web-editor built with Express (potentionally react), to develop this project further:
@@ -47,9 +48,7 @@ What is the problem?
 The current problem is that I have zero experience with [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), this is problematic and thus want to create something with sockets. After some contemplating I decided to create a text editor, specifically an editor to write markdown.
 
 ### Current problems
-After implementing the core functionalities and testing these I have found the some UX breaking bugs. It is mostly contained in the editing of markdown and saving this markdown. See [issue #7 about a more detailed rundown of the bugs.](https://github.com/dewarian/real-time-web-2021/issues/7)
-
-Besides the issue with the UX there is also no UI state changes when the data is being saved on click event.
+After implementing the core functionalities and testing these I have found the some UX breaking bugs. It is mostly contained in the editing of markdown and saving this markdown. See [issue #7 for the status of this problem.](https://github.com/dewarian/real-time-web-2021/issues/7#issuecomment-828665217)
 
 ## Solution
 
@@ -87,13 +86,13 @@ Actions that should be possible in a markdown editor, ordered in a manner accord
 | :------------------- | :----------------: | :----: | :----------------: | :----------------: |--|
 | Write Markdown       | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
 | Multi User support   | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
-| Export Markdown      |                    |        | :white_check_mark: |                    ||
-| Delete Markdownn     |                    |        | :white_check_mark: |                    ||
-| Github Intergration  |                    |        |                    | :white_check_mark: ||
 | Storage for markdown | :white_check_mark: |        |                    |                    |:heavy_check_mark:|
+| Github Intergration  |                    |        |                    | :white_check_mark: ||
 | Shortcuts            |                    |        |                    | :white_check_mark: ||
 | Prefix auto-complete |                    |        |                    | :white_check_mark: ||
-| **Pleasurable UI state** |                    |        | :white_check_mark: |||
+| Delete Markdownn     |                    |        | :white_check_mark: |                    ||
+| Export Markdown      |                    |        | :white_check_mark: |                    ||
+| **Pleasurable UI state** |                    |        | :white_check_mark: ||:heavy_check_mark:|
 | `//To Be continued`  |                    |        |                    |                    ||
 
 **Style decisions**
@@ -101,7 +100,8 @@ Style decisions are decisions that are made for the user interface of the applic
 | |Must|Should|Could|Would|Implemented|
 |:-------------------|:-:|:-:|:-:|:-:|--|
 |Syntax Highlighting | | | :white_check_mark: | ||
-|Dark Mode | | :white_check_mark: | | |:heavy_check_mark:|
+|Dark Mode | | :white_check_mark: | | ||
+|HTML styling|:white_check_mark:||||:heavy_check_mark:|
 |`//To Be continued` | | | | |
 
 
@@ -173,19 +173,20 @@ The data flows bi-directional because of socket.io, when a user joins a room it 
 
 ### Socket Events
 
-The project has defined a few socket events that socket.io listens to. Based on these events a certain action happens when the client calls knocks on the door,
+The project has defined a few socket events that socket.io listens to. Based on these events a certain action happens when the client calls knocks on the door.
  |Name|Action|
  |:-|--|
  |[`Connection`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L40)|Listens when a client connects.|
- |[`Message`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L54)|Emits the data from the markdown to clients.|
- |[`createDoc`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L43)|Create a document (room), enter it and emit event `getCache`.|
- |[`setText`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L58)|On event send object with markdown and roomname then emit `getText` event.|
- |[`getText`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L59)|On event, set data in markdown editor.|
- |[`getListings`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L62)|On event, return object of all documents.|
- |[`setListings`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L63)|On event, create a list view of documents on homepage|
- |[`setCache`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L66)|On event, save data object (room, data) to database.|
- |[`getCache`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L48)|On event, send data from database to the room and insert it in the HTML for markdown rendering.|
- |[`disconnect`](https://github.com/dewarian/real-time-web-2021/blob/9cbb489161366f9650b4365ca5079e6c2b4899e1/server.js#L72)|Yeet the user from the document (room).|
+ |[`Message`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L20)|Emits the data from the markdown to clients.|
+ |[`createDoc`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L15)|Create a document (room), enter it and emit event `getCache`.|
+ |[`setText`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L24)|On event send object with markdown and roomname then emit `getText` event.|
+ |[`getText`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L25)|On event, set data in markdown editor.|
+ |[`getListings`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L28)|On event, return object of all documents.|
+ |[`setListings`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L29)|On event, create a list view of documents on homepage|
+ |[`setCache`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L32)|On event, save data object (room, data) to database.|
+ |[`getCache`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L17)|On event, send data from database to the room and insert it in the HTML for markdown rendering.|
+ |[`disconnect`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L36)|Yeet the user from the document (room).|
+ |[`connect_error`](https://github.com/dewarian/real-time-web-2021/blob/8494f398a30b3128fc0ecacc8932545b2a6decb9/modules/socketEvents.js#L40)| If there is an error with sockets, this will log it and allow me to fix it.|
 
 ### Data Model
 
