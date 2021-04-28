@@ -51,9 +51,10 @@ h1, h2, h3 {
 
 main {
   max-width: clamp(65ch, 50em, 55em);
-  margin: 0 auto;
+  margin: 0em auto;
+  margin-top: 1em;
   padding: 2em;
-  height: calc(100vh - 28px);
+  height: calc(100vh - 2em);
   background-color: var(--bg);
   box-shadow: 0 0 2px 2px var(--shadow);
 }
@@ -160,6 +161,10 @@ Markdown Documents
   filter: brightness(90%);
   box-shadow: 0 0px 0 var(--shadow);
 
+}
+
+#theme-switcher {
+  display: none;
 }
 /* 
 @media (prefers-color-scheme: dark) {
