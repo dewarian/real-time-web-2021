@@ -42,9 +42,9 @@ header {
   margin-bottom: 1em;
 }
 
-p {
+/* p {
   max-width: clamp(65ch, calc(50em - 4em), 76ch);
-}
+} */
 
 header {
   display: flex;
@@ -117,8 +117,8 @@ main {
 }
 
 pre #output p {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
 }
 
 pre {
